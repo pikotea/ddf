@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>エントリーリスト ーDarkStalkers Duo Festival 2nd</title>
+  <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'> -->
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://darkstalkersduofes.blog.fc2.com/">DarkStalkers Duo Festival 2nd</a>
+      </div>
+      <div id="navbar" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-align-justify"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="to-entry-form entry-action dropdown-menu-label"><i class="material-icons">playlist_add</i> エントリー</a></li>
+              <li><a href="#" class="to-edit-form entry-action dropdown-menu-label"><i class="material-icons">create</i> 編集・削除</a></li>
+              <li role="separator" class="divider entry-action"></li>
+              <li><a href="#entries" class="anchor-button dropdown-menu-label"><i class="material-icons">list</i> チームエントリーリスト</a></li>
+              <li><a href="#mediation-list" class="anchor-button dropdown-menu-label"><i class="material-icons">list</i> エントリー（斡旋希望）リスト</a></li>
+              <li><a href="#summary" class="anchor-button dropdown-menu-label"><i class="material-icons">assessment</i> サマリー</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container">
+    <div class="page-header text-center">
+      <a href="#team-entry" class="btn btn-primary entry-action to-entry-form">エントリー</a>
+      <a href="#edit-form" class="btn btn-default entry-action to-edit-form">編集・削除</a>
+    </div>
+
+    <section id="entries">
+      <h3>チームエントリー <small class="updated-at pull-right">更新日時: <span class="team-last-updated-at"></span></small></h3>
+      <ul id="teams">
+      </ul>
+      <div class="help pull-right">
+        <ul>
+          <li><i class="material-icons">stars</i> … 前夜祭参加</li>
+          <li><i class="material-icons">local_bar</i> … 打ち上げ参加</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="mediation-list">
+      <h3>エントリー（斡旋希望）<small class="updated-at pull-right">更新日時: <span class="single-last-updated-at"></span></small></h3>
+      <ul id="singles" class="singles">
+      </ul>
+    </section>
+
+    <section id="summary">
+      <h3>サマリー</h3>
+      <div style="overflow:hidden;">
+      <div class="col-sm-6">
+        <dl class="dl-horizontal">
+          <dt>チームエントリー</dt>
+          <dd class="team-entry-count">0</dd>
+          <dt>エントリー（斡旋希望）</dt>
+          <dd class="single-entry-count">0</dd>
+          <dt>参加人数合計</dt>
+          <dd class="total-count">0</dd>
+        </dl>
+      </div>
+      <div class="col-sm-6">
+        <dl class="dl-horizontal">
+          <dt>打ち上げ参加人数</dt>
+          <dd class="after-count">0</dd>
+          <dt>前夜祭参加人数</dt>
+          <dd class="eve-count">0</dd>
+        </dl>
+      </div>
+      </div>
+      <section>
+        <h4>使用キャラ分布</h4>
+        <ul id="character-count" class="count">
+        </ul>
+      </section>
+      <section>
+        <h4>使用キャラ分布（前夜祭）</h4>
+        <section>
+          <h5>WANTED ( <span class="wanted-count">0</span> ) <a href="#wanted" data-toggle="modal" class="modal-link"> ≫<span>プレイヤーリスト</span></a></h5>
+          <ul id="eve-wanted-count" class="count"></ul>
+        </section>
+        <section>
+          <h5>HUNTER ( <span class="hunter-count">0</span> ) <a href="#hunter" data-toggle="modal" class="modal-link"> ≫<span>プレイヤーリスト</span></a></h5>
+          <ul id="eve-hunter-count" class="count"></ul>
+        </section>
+      </section>
+      <section>
+        <h4>棲息地域分布</h4>
+        <ul id="region-count">
+        </ul>
+      </section>
+    </section>
+
+    <section class="modal fade team-entry" tabindex="-1" role="dialog" id="team-entry">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title visible-entry" id="entry-form-title">エントリー</h4>
+            <h4 class="modal-title visible-edit">エントリーの編集・削除</h4>
+          </div>
+          <div class="modal-body">
+            <form class="team-entry-form form-horizontal visible-entry">
+              <input type="hidden" name="id" value="" id="key">
+              <div class="entry-explain">
+                DarkStalkers Duo Festival 2ndのエントリーフォームです。必須項目を入力しエントリーをお願いします。
+                <ul>
+                  <li><small>※ エントリーの反映はリアルタイムです。</small></li>
+                  <li><small>※ エントリー後の編集は自分で行うことが出来ます。（既に登録されたエントリーの編集・削除は<a href="#edit-form" class="change-edit-form">こちら</a>）</small></li>
+                  <li><small>※ 問題が発生した場合、ページを再表示して最初からやり直してみてください。</small></li>
+                </ul>
+                <hr>
+              </div>
+              <div class="form-group full-width">
+                <label for="mediation-checkbox" class="col-sm-2 control-label">種別 <span class="badge">必須</span></label>
+                <div class="col-sm-10">
+                  <div class="radio-inline">
+                    <label>
+                      <input type="radio" id="type-team" name="entry-type" checked>
+                      チームエントリー
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label>
+                      <input type="radio" id="type-single" name="entry-type">
+                      斡旋希望
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group full-width" id="team-name">
+                <label for="teamName" class="col-sm-2 control-label">チーム名 <span class="badge">必須</span></label>
+                <div class="col-sm-10">
+                  <input type="text" value="" id="teamName" class="form-control require" placeholder="20文字まで" maxlength="20">
+                </div>
+              </div>
+              <fieldsest class="form-group team-member" id="member1">
+                <legend class="col-sm-12">1人目</legend>
+                <div class="form-member form-group">
+                  <label for="member1-name" class="col-sm-2 control-label">プレイヤー名 <span class="badge">必須</span></label>
+                  <div class="col-sm-4">
+                    <input type="text" value="" id="member1-name" class="form-control require" placeholder="15文字まで" maxlength="15">
+                  </div>
+                  <label for="member1-character" class="col-sm-2 control-label">使用キャラ <span class="badge">必須</span></label>
+                  <div class="col-sm-4">
+                    <select id="member1-character" class="characters form-control require"><option>選択してください</option></select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="member1-comment" class="col-sm-2 control-label">コメント</label>
+                  <div class="col-sm-10">
+                    <textarea id="member1-comment" class="form-control" placeholder="30文字まで（改行は削除されます）" maxlength="30"></textarea>
+                  </div>
+                </div>
+                <div class="form-member form-group">
+                  <label for="member1-region" class="col-sm-2 control-label">棲息地域</label>
+                  <div class="col-sm-4">
+                    <select id="member1-region" class="regions form-control"><option>選択してください</option></select>
+                  </div>
+                  <label for="member1-home" class="col-sm-2 control-label">主な出没場所</label>
+                  <div class="col-sm-4">
+                    <input type="text" value="" id="member1-home" class="form-control" maxlength="30" placeholder="ホームゲーセン等">
+                  </div>
+                </div>
+                <div class="form-group after">
+                  <label class="col-sm-3 control-label">打ち上げに参加しますか？<br class="hidden-xs"><small>（詳細は<!-- <a href="#" target="_blank"> -->後ほど<!-- </a> -->）</small></label>
+                  <div class="col-sm-6">
+                    <label class="radio-inline">
+                      <input type="radio" name="member1-after" id="member1-join-ok" value="1">
+                      参加する
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="member1-after" id="member1-join-ng" value="0">
+                      参加しない
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group eve">
+                  <label class="col-sm-3 control-label">前夜祭に参加しますか？<br class="hidden-xs"><small>（詳細は<a href="http://darkstalkersduofes.blog.fc2.com/blog-entry-27.html" target="_blank">こちら</a>）</small></label>
+                  <div class="col-sm-6">
+                    <label class="radio-inline">
+                      <input type="radio" name="member1-eve" id="member1-eve-ok" value="1">
+                      参加する
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="member1-eve" id="member1-eve-ng" value="0">
+                      参加しない
+                    </label>
+                  </div>
+                </div>
+              </fieldsest>
+              <fieldsest class="form-group team-member" id="member2">
+                <legend class="col-sm-12">2人目</legend>
+                <div class="form-member form-group">
+                  <label for="member2-name" class="col-sm-2 control-label">プレイヤー名 <span class="badge">必須</span></label>
+                  <div class="col-sm-4">
+                    <input type="text" value="" id="member2-name" class="form-control require" placeholder="15文字まで" maxlength="15">
+                  </div>
+                  <label for="member2-character" class="col-sm-2 control-label">使用キャラ <span class="badge">必須</span></label>
+                  <div class="col-sm-4">
+                    <select id="member2-character" class="characters form-control require"><option>選択してください</option></select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="member2-comment" class="col-sm-2 control-label">コメント</label>
+                  <div class="col-sm-10">
+                    <textarea id="member2-comment" class="form-control" placeholder="30文字まで（改行は削除されます）" maxlength="30"></textarea>
+                  </div>
+                </div>
+                <div class="form-member form-group">
+                  <label for="member2-region" class="col-sm-2 control-label">棲息地域</label>
+                  <div class="col-sm-4">
+                    <select id="member2-region" class="regions form-control"><option>選択してください</option></select>
+                  </div>
+                  <label for="member2-home" class="col-sm-2 control-label">主な出没場所</label>
+                  <div class="col-sm-4">
+                    <input type="text" value="" id="member2-home" class="form-control" maxlength="30" placeholder="ホームゲーセン等">
+                  </div>
+                </div>
+                <div class="form-group after">
+                  <label class="col-sm-3 control-label">打ち上げに参加しますか？<br class="hidden-xs"><small>（詳細は<!-- <a href="#" target="_blank"> -->後ほど公開します<!-- </a> -->）</small></label>
+                  <div class="col-sm-9">
+                    <label class="radio-inline">
+                      <input type="radio" name="member2-after" id="member2-join-ok" value="1">
+                      参加する
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="member2-after" id="member2-join-ng" value="0">
+                      参加しない
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group eve">
+                  <label class="col-sm-3 control-label">前夜祭に参加しますか？<br class="hidden-xs"><small>（詳細は<a href="http://darkstalkersduofes.blog.fc2.com/blog-entry-27.html" target="_blank">こちら</a>）</small></label>
+                  <div class="col-sm-6">
+                    <label class="radio-inline">
+                      <input type="radio" name="member2-eve" id="member2-eve-ok" value="1">
+                      参加する
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="member2-eve" id="member2-eve-ng" value="0">
+                      参加しない
+                    </label>
+                  </div>
+                </div>
+              </fieldsest>
+              <div class="form-group full-width form-group-sm pass">
+                <label for="pass" class="col-sm-2 control-label">編集・削除用<br class="hidden-xs">パスワード <span class="badge">必須</span></label>
+                <div class="col-sm-4">
+                  <input type="password" value="" id="pass" class="form-control require" placeholder="">
+                </div>
+                <div class="col-sm-6">
+                  <small>※ エントリー後に登録情報の編集・削除ができます。</small>
+                </div>
+              </div>
+            </form>
+            <div class="alert" id="message"></div>
+            <form class="edit-form form-inline visible-edit" id="edit-form">
+              <p>
+                <small>
+                  ① 対象のエントリーを選び、パスワードを入れて、入力ボタンをクリック（各エントリーの右上の<i class="material-icons" style="font-size:14px">create</i>ボタンでも可能です）<br>
+                  ② エントリーフォームに自動的に以前の情報が入力されるので、内容を修正して編集するボタンをクリック<br>
+                </small>
+              </p>
+              <div class="form-group form-group-sm">
+                <label for="target">対象のエントリー</label>
+                <select id="target" class="form-control">
+                  <option>選択してください</option>
+                  <optgroup label="チームエントリー" id="target-team">
+                  </optgroup>
+                  <optgroup label="エントリー（斡旋希望）" id="target-single">
+                  </optgroup>
+                </select>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="input-pass">パスワード</label>
+                <input type="password" id="input-pass" class="form-control">
+              </div>
+              <div class="alert" id="message2"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="entry-button" class="btn btn-primary visible-entry-inline-block">エントリー</button>
+            <button type="button" id="edit-button" class="btn btn-primary visible-edit-inline-block">編集する</button>
+            <button type="button" id="delete-button" class="btn btn-danger visible-edit-inline-block">削除する</button>
+            <button type="button" id="input-button" class="btn btn-warning visible-edit-inline-block">入力</button>
+            <button type="button" id="cancel-button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </section><!-- /.modal -->
+
+    <section class="modal fade" tabindex="-1" role="dialog" id="wanted">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">WANTED ( <span class="wanted-count">0</span> ) </h4>
+          </div>
+          <div class="modal-body">
+            <ul id="wanted-members" class="singles">
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </section><!-- /.modal -->
+
+    <section class="modal fade" tabindex="-1" role="dialog" id="hunter">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">HUNTER ( <span class="hunter-count">0</span> ) </h4>
+          </div>
+          <div class="modal-body">
+            <ul id="hunter-members" class="singles">
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </section><!-- /.modal -->
+
+    <footer class="footer">
+      <p>&copy; DarkStalkers Duo Festival<small class="manage"><a href="./admin/">管理ページ</a></small></p>
+    </footer>
+  </div>
+
+  <script id="template-team" type="text/x-jquery-tmpl">
+    <li id="${key}">
+      <section class="team">
+        <h4>
+          <a href="#" data-id="${key}" class="edit-link pull-right" title="編集・削除"><span class="material-icons">create</span></a>
+          <span class="team-no">No. ${no}</span>
+          ${name}
+        </h4>
+        <ul class="members">
+          <li class="member col-sm-6">
+            <div class="left-block">
+              <img src="./img/icons/${members[0].charaIcon}" alt="">
+              <div class="entry-status">
+                {{if members[0].eve == 1}}
+                  <i class="material-icons" title="前夜祭">stars</i>
+                {{/if}}
+                {{if members[0].after == 1}}
+                  <i class="material-icons" title="打ち上げ">local_bar</i>
+                {{/if}}
+              </div>
+            </div>
+            <p class="player-name">${members[0].name}</p>
+            <span class="player-chara">${members[0].charaName}</span>
+            <p class="player-comment">${members[0].comment}</p>
+          </li>
+          <li class="member col-sm-6">
+            <div class="left-block">
+              <img src="./img/icons/${members[1].charaIcon}" alt="">
+              <div class="entry-status">
+                {{if members[1].eve == 1}}
+                  <i class="material-icons" title="前夜祭">stars</i>
+                {{/if}}
+                {{if members[1].after == 1}}
+                  <i class="material-icons" title="打ち上げ">local_bar</i>
+                {{/if}}
+              </div>
+            </div>
+            <p class="player-name">${members[1].name}</p>
+            <span class="player-chara">${members[1].charaName}</span>
+            <p class="player-comment">${members[1].comment}</p>
+          </li>
+        </ul>
+      </section>
+    </li>
+  </script>
+
+  <script id="template-single" type="text/x-jquery-tmpl">
+    <li class="member col-sm-4 single" id="${key}">
+      <div class="left-block">
+        <img src="./img/icons/${members[0].charaIcon}" alt="">
+        <div class="entry-status">
+          {{if members[0].eve == 1}}
+            <i class="material-icons" title="前夜祭">stars</i>
+          {{/if}}
+          {{if members[0].after == 1}}
+            <i class="material-icons" title="打ち上げ">local_bar</i>
+          {{/if}}
+        </div>
+      </div>
+      <a href="#" data-id="${key}" class="edit-link pull-right" title="編集・削除"><span class="material-icons">create</span></a>
+      <p class="player-name">${members[0].name}</p>
+      <span class="player-chara">${members[0].charaName}</span>
+      <p class="player-comment">${members[0].comment}</p>
+    </li>
+  </script>
+
+  <script id="character-count-template" type="text/x-jquery-tmpl">
+    <li class="member col-sm-3 col-xs-6 single">
+      <div class="left-block">
+        <img src="./img/icons/${image}" alt="">
+      </div>
+      <span class="player-chara">${name}</span>
+      <p class="player-name">${count} 人</p>
+    </li>
+  </script>
+
+  <script id="template-eve" type="text/x-jquery-tmpl">
+    <li class="member col-sm-4 single">
+      <div class="left-block">
+        <img src="./img/icons/${members[0].charaIcon}" alt="">
+      </div>
+      <p class="player-name">${members[0].name}</p>
+      <span class="player-chara">${members[0].charaName}</span>
+    </li>
+  </script>
+
+  <script id="template-region-count" type="text/x-jquery-tmpl">
+    <li class="region">
+      <span class="region-name">${name}</span>
+      <span class="region-count">${count}</span>
+    </li>
+  </script>
+
+  <script src="./components/jquery/dist/jquery.min.js"></script>
+  <script src="./components/jquery-tmpl/jquery.tmpl.min.js"></script>
+  <script src="./components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+  <!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
+  <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+  <!-- <script src="./components/Chart.js/Chart.min.js"></script> -->
+  <script src="./components/js-md5/js/md5.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

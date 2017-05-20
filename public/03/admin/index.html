@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>管理画面 ーDarkStalkers Duo Festival</title>
+  <link rel="stylesheet" href="../components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header clearfix">
+      <h3 class="text-muted">DarkStalkers Duo Festival 管理コンソール</h3>
+    </div>
+
+    <div class="login">
+      <form class="form-inline form-horizontal">
+        <div class="col-sm-12">
+          <div class="login-message alert"></div>
+        </div>
+        <div class="from-group">
+          <label for="admin-pass" class="col-sm-4 control-label">管理パスワード</label>
+          <div class="col-sm-4">
+            <input type="password" id="admin-pass" class="form-control">
+          </div>
+          <div class="col-sm-4">
+            <button class="btn btn-primary" id="login-button">ログイン</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="page">
+      <section id="admin">
+        <div class="alert alert-success status">
+          <form class="form-horizontal">
+            <div class="from-group">
+              <label class="status-text col-sm-4 control-label">只今エントリー受付中</label>
+              <div class="col-sm-offset-1 col-sm-7">
+                <button class="btn btn-success start">エントリー受付開始</button>
+                <button class="btn btn-warning stop">エントリー受付停止</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <section class="entry-output">
+          <h4>リスト出力（CSV）</h4>
+          <small>※ Windowsまたは、Office（Excel）で利用する場合は、「出力（Shift_JIS）」のほうをお使いください。</small>
+          <section>
+            <h5>チームエントリー</h5>
+            <dl class="dl-horizontal">
+              <dt>エントリー数:</dt>
+              <dd class="team-entry-count"></dd>
+              <dt>最終更新日:</dt>
+              <dd class="team-last-updated-at"></dd>
+              <dd></dd>
+            </dl>
+            <a download="ddf-entry-teams-utf8.csv" class="btn btn-default btn-sm" href="" id="teams-output-utf8">出力（UTF-8）</a>
+            <a download="ddf-entry-teams-sjis.csv" class="btn btn-default btn-sm" href="" id="teams-output-sjis">出力（Shift_JIS）</a>
+          </section>
+          <section>
+            <h5>エントリー（斡旋希望）</h5>
+            <dl class="dl-horizontal">
+              <dt>エントリー数:</dt>
+              <dd class="single-entry-count"></dd>
+              <dt>最終更新日:</dt>
+              <dd class="single-last-updated-at"></dd>
+              <dd></dd>
+            </dl>
+            <a download="ddf-entry-singles.csv" class="btn btn-default btn-sm" id="singles-output-utf8">出力（UTF-8）</a>
+            <a download="ddf-entry-singles.csv" class="btn btn-default btn-sm" id="singles-output-sjis">出力（Shift_JIS）</a>
+          </section>
+        </section>
+
+        <section class="entry-output">
+          <h4>システム</h4>
+          <a href="https://ddf.firebaseio.com/.json?format=export" download="backup.json" class="btn btn-primary btn-sm" style="margin-left:1em;">バックアップ取得</a>
+        </section>
+
+      </section>
+    </div>
+
+    <p><a href="../" target="_blank">エントリーページへ</a></p>
+
+    <footer class="footer">
+      <p>&copy; DarkStalkers Duo Festival</p>
+    </footer>
+  </div>
+
+  <script src="../components/jquery/dist/jquery.min.js"></script>
+  <script src="../components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+  <script src="../components/js-md5/js/md5.min.js"></script>
+  <script src="../js/ecl.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

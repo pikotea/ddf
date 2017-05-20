@@ -1,0 +1,689 @@
+/* Space out content a bit */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container, .container-fluid {
+    max-width: 768px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+/* customize */
+/*.navbar-header {
+  width: 100%;
+}*/
+.material-icons {
+  vertical-align: middle;
+}
+.dropdown-menu .material-icons {
+  font-size: 20px;
+  line-height: 1;
+}
+section {
+  overflow: hidden;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 0;
+  padding: 0;
+}
+.team-entry {
+  display: none; /* default */
+  border: 1px solid #ccc;
+  padding: 0 5px 0 15px;
+}
+.team-entry h3 {
+  margin-bottom: 0.8em;
+}
+.team-entry label {
+  font-weight: normal;
+}
+.team-entry-form .team-member {
+  display: block;
+  overflow: hidden;
+  margin: 20px 0;
+  /*border: 1px solid gray;*/
+  /*padding-left: 1em;*/
+}
+.team-entry-form legend {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 0 0.2em 5px;
+}
+.form-member {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.form-horizontal .form-group.full-width {
+/*  margin-left: -25px;
+  margin-right: -25px;*/
+}
+.form-horizontal .form-group {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.mediation {
+  margin-left: 4em;
+}
+ul#teams, ul.members, ul.singles, ul.count {
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.singles, ul.count {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul#teams li, ul.members li, ul.count {
+  margin: 0;
+  padding: 0;
+}
+.container > section {
+  margin-bottom: 3em;
+}
+#teams >li {
+  border-bottom: 1px solid #e5e5e5;
+}
+#teams >li:first-child {
+  /*border-top: 1px solid #e5e5e5;*/
+}
+.team-no {
+  color: #777;
+  font-size: 0.9em;
+  margin-right: 13px;
+  text-shadow: none;
+}
+.team h4 {
+  font-weight: bold;
+  line-height: 1.4;
+  padding-left: 5px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin: 5px 0;
+}
+.member {
+  margin: 0;
+  padding: 10px 5px 10px 63px !important;
+  overflow: hidden;
+}
+.member img {
+  width: 50px;
+  height: 50px;
+  border-radius: 2px;
+}
+.member .left-block {
+  float: left;
+  margin: 0 0 0 -58px;
+}
+.entry-status .material-icons {
+  font-size: 14px;
+  color: #999;
+}
+.player-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.player-chara {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12px;
+  color: #777;
+}
+.player-comment {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.mediation-list {
+  overflow: hidden;
+}
+section > h3 {
+  font-size: 20px;
+  overflow: hidden;
+}
+
+#message {
+  display: none;
+}
+.edit-text-link {
+  text-align: right;
+  padding: 10px 15px;
+}
+#edit-form-button {
+  display: inline-block;
+  /*padding: 6px;*/
+}
+.edit-form {
+  margin: 0 15px 15px;
+}
+#target {
+  max-width: 180px;
+  margin-right: 1em;
+}
+#entry-button {
+  min-width: 60px
+}
+#message2 {
+  display: none;
+  margin-top: 1em;
+}
+#edit-button {
+  display: none;
+}
+#delete-button {
+  display: none;
+  /*margin-left: 1em;*/
+}
+
+#message .btn {
+  margin-left: 1em;
+}
+textarea {
+  resize: none;
+}
+/*.nav .btn {
+  margin-top: 5px;
+  padding: 5px 10px;
+}*/
+.nav .btn.btn-primary {
+  margin-right: 5px;
+}
+.nav .btn.btn-primary:hover, .nav .btn.btn-primary:active, .nav .btn.btn-primary:focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+option:not([value]) {
+  color: #9B9B9B;
+}
+label {
+  white-space: nowrap;
+}
+.form-group .control-label {
+  padding-left: 5px;
+  text-align: left;
+  color: #000 !important;
+}
+.form-group .control-label .badge {
+  font-size: 10px;
+  background: #A94442;
+}
+.form-group .control-label[for=pass] {
+  padding-top: 0;
+}
+.require {
+  border: 1px solid #A94442;
+}
+.after .radio-inline {
+  padding-top: 14px;
+}
+.entry-explain {
+  margin-right: 10px;
+  margin-bottom: 1em;
+}
+.entry-explain ul {
+  margin-top: 0.8em;
+  margin-left: 0.8em;
+}
+.edit-link {
+  visibility: hidden;
+  text-shadow: none;
+}
+.edit-link > .material-icons {
+  font-size: 12px;
+  color: #fff;
+  padding: 2px;
+  background: #ccc;
+  border-radius: 2px;
+}
+.edit-link:hover {
+  color: #333;
+}
+.team:hover .edit-link, .single:hover .edit-link {
+  visibility: visible;
+}
+.entry-action {
+  display: none;
+}
+.modal-footer {
+  text-align: center
+}
+/* entry-form */
+.team-entry .visible-entry {
+  display: block;
+}
+.team-entry .visible-entry-inline-block {
+  display: inline-block;
+}
+.team-entry .visible-edit {
+  display: none;
+}
+.team-entry .visible-edit-inline-block {
+  display: none;
+}
+
+/* edit-form */
+.team-entry.edit .visible-entry {
+  display: none;
+}
+.team-entry.edit .visible-entry-inline-block {
+  display: none;
+}
+.team-entry.edit .visible-edit {
+  display: block;
+}
+.team-entry.edit .visible-edit-inline-block {
+  display: inline-block;
+}
+
+.modal-header {
+  background: #000;
+  color: #fff;
+}
+.modal-footer button {
+  margin-left: 1em;
+  min-width: 100px;
+}
+.modal-footr button:first-child {
+  margin-left: 0;
+}
+.modal-body {
+  padding: 15px 15px 0;
+}
+.close {
+  color: #fff;
+  opacity: 0.5;
+}
+.page-header {
+  display: block;
+  margin: 2em 0 0;
+  height: 50px;
+  line-height: 1;
+  padding-bottom: 1em;
+}
+.page-header .btn {
+  margin-left: 1em;
+}
+.page-header .btn:first-child {
+  margin-left: 0;
+}
+.updated-at {
+  line-height: 22px;
+}
+
+.done {
+  background: #FFF67F;
+}
+.animate {
+  transition: background linear 3s;
+  background: transparent;
+}
+#summary {
+  background: #F9F9F9;
+  padding: 0 15px;
+}
+#navbar .dropdown-toggle {
+  margin-right: 15px;
+}
+#summary .dl-horizontal {
+  margin-left: 0.5em;
+}
+#summary .dl-horizontal dt {
+  width: 170px;
+}
+#summary .dl-horizontal dd {
+  margin-left: 170px;
+  font-weight: bold;
+}
+#summary section {
+  clear: both;
+}
+.help {
+  margin-top: 0.4em;
+}
+.help .material-icons {
+  font-size: 16px;
+  color: #999;
+}
+.help li {
+  display: inline-block;
+  margin-right: 1em;
+  font-size: 12px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-header {
+    float: left;
+  }
+  .navbar-right {
+    float: right;
+    /*margin-right: -15px;*/
+  }
+  #navbar .dropdown.open .dropdown-menu {
+    min-width: 220px;
+    display: block;
+  }
+  #navbar .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: auto;
+    right: 0;
+    display: none;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+    background-color: #e5e5e5;
+  }
+  #navbar .dropdown-menu li > .dropdown-menu-label {
+      display: block;
+      padding: 3px 20px;
+      color: #333;
+  }
+  li {
+    margin: 0;
+  }
+  .team-entry-form legend {
+    margin-left: 0;
+  }
+  .team-member {
+    padding: 0;
+  }
+  .mediation {
+    margin-left: 1em;
+  }
+  ul.singles {
+    display: block;
+  }
+  .header {
+    padding : 0;
+  }
+  .header nav {
+    display: none;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  #member1-name, #member2-name,
+  #member1-region, #member2-region {
+    margin-bottom: 14px;
+  }
+  #target {
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  body {
+    padding: 50px 0 0;
+  }
+  .header h3 {
+    margin-top: 10px;
+    font-size: 22px;
+  }
+  .team-entry {
+    padding: 0 5px;
+  }
+  .form-group .control-label {
+      padding-left: 15px;
+  }
+  .team-entry-form legend {
+    margin-left: 10px;
+  }
+  .team-entry h3 {
+    margin-left: 15px;
+  }
+  .after .radio-inline {
+    padding-top: 7px;
+  }
+  .entry-explain {
+    margin: 0 15px 1em;
+  }
+  #team-entry {
+    padding: 0;
+  }
+  .edit-link {
+    visibility: visible;
+  }
+  .modal-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .member {
+    padding-right: 0 !important;
+  }
+  .updated-at {
+    display: block;
+    float: none !important;
+  }
+  .modal-footer button {
+    min-width: 80px;
+    font-size: 11px;
+  }
+  #message {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .entry-explain li {
+    margin-left: 0;
+  }
+}
+
+/* for webkit bug */
+.modal-open {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+/* 管理画面 */
+.status {
+  display: none; /* default */
+  overflow: hidden;
+}
+.status .start {
+  display: none; /* default */
+}
+.entry-output {
+  margin: 2em 0;
+}
+.entry-output .btn {
+  margin-right: 1em;
+}
+.entry-output .btn:last-child {
+  margin-right: 0;
+}
+.entry-output h4 {
+  /*font-weight: bold;*/
+  /*margin-bottom: 1em;*/
+}
+.entry-output h5 {
+  font-weight: bold;
+  font-size: 1.2em;
+  /*margin-bottom: 1em;*/
+}
+.dl-horizontal {
+  margin-bottom: 0.4em;
+}
+.dl-horizontal dt {
+  text-align: left;
+  width: 100px;
+  font-weight: normal;
+  float: left;
+}
+.dl-horizontal dd {
+  margin-left: 100px;
+}
+.entry-output > section{
+  padding: 10px;
+}
+.login {
+  overflow: hidden;
+  margin: 4em 0;
+}
+#admin-pass {
+  width: 100%;
+}
+.page {
+  display: none;
+}
+.login-message {
+  display: none;
+}
+
+.modal-link {
+  margin-left: 6px;
+}
+.modal-link > span {
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+  #admin .from-group {
+    text-align: center;
+  }
+}
+
+#region-count, #region-count-legend {
+  width: 50%;
+  float: left;
+  padding: 1em;
+}
+@media (max-width: 768px) {
+  #region-count, #region-count-legend {
+    width: 100%;
+  }
+  .pie-legend li {
+    float: left;
+    width: 50%;
+  }
+}
+.pie-legend {
+  overflow: hidden;
+}
+.pie-legend span {
+  display: block;
+  width: 1em;
+  height: 1em;
+  float: left;
+  margin: 2px 8px 0 0;
+}
+
+#summary > section {
+  margin-top: 1em;
+}
+.navbar-inverse .navbar-brand {
+  font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  color: white;
+  font-weight: normal;
+}
+.navbar-inverse .navbar-brand:hover {
+  color: #9d9d9d;
+}
+/*#chart {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}*/
+/*#chart-inner {
+  transform: scale(1.5);
+  position: relative;
+}*/
+
+#region-count {
+  -webkit-column-count: 2;
+}
+.region-name {
+  display: inline-block;
+  width: 4.5em;
+}
+.region-count {
+  display: inline-block;
+  width: 2em;
+  text-align: right;
+}
+
+.manage {
+  float: right;
+}

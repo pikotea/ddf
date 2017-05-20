@@ -1,0 +1,26 @@
+{
+  "name": "ddf",
+  "authors": [
+    "pikotea <pikotea@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery-tmpl": "*",
+    "jquery": "~2.2.0",
+    "js-md5": "~2.1.0",
+    "Chart.js": "chartjs#~1.0.2"
+  }
+}
