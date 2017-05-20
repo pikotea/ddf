@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <title>エントリーリスト ーDarkStalkers Duo Festival 2nd</title>
+  <title>エントリーリスト ーDarkStalkers Duo Festival 3rd</title>
   <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!-- <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'> -->
@@ -14,7 +14,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="http://darkstalkersduofes.blog.fc2.com/">DarkStalkers Duo Festival 2nd</a>
+        <a class="navbar-brand" href="http://darkstalkersduofes.blog.fc2.com/">DarkStalkers Duo Festival 3rd</a>
       </div>
       <div id="navbar" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
@@ -57,6 +57,12 @@
       <h3>エントリー（斡旋希望）<small class="updated-at pull-right">更新日時: <span class="single-last-updated-at"></span></small></h3>
       <ul id="singles" class="singles">
       </ul>
+      <div class="help pull-right">
+        <ul>
+          <li><i class="material-icons">stars</i> … 前夜祭参加</li>
+          <li><i class="material-icons">local_bar</i> … 打ち上げ参加</li>
+        </ul>
+      </div>
     </section>
 
     <section id="summary">
@@ -87,13 +93,8 @@
         </ul>
       </section>
       <section>
-        <h4>使用キャラ分布（前夜祭）</h4>
+        <h4>使用キャラ分布（前夜祭）<a href="#hunter" data-toggle="modal" class="modal-link"> ≫<span>プレイヤーリスト</span></a></h4>
         <section>
-          <h5>WANTED ( <span class="wanted-count">0</span> ) <a href="#wanted" data-toggle="modal" class="modal-link"> ≫<span>プレイヤーリスト</span></a></h5>
-          <ul id="eve-wanted-count" class="count"></ul>
-        </section>
-        <section>
-          <h5>HUNTER ( <span class="hunter-count">0</span> ) <a href="#hunter" data-toggle="modal" class="modal-link"> ≫<span>プレイヤーリスト</span></a></h5>
           <ul id="eve-hunter-count" class="count"></ul>
         </section>
       </section>
@@ -116,7 +117,7 @@
             <form class="team-entry-form form-horizontal visible-entry">
               <input type="hidden" name="id" value="" id="key">
               <div class="entry-explain">
-                DarkStalkers Duo Festival 2ndのエントリーフォームです。必須項目を入力しエントリーをお願いします。
+                DarkStalkers Duo Festival 3rdのエントリーフォームです。必須項目を入力しエントリーをお願いします。
                 <ul>
                   <li><small>※ エントリーの反映はリアルタイムです。</small></li>
                   <li><small>※ エントリー後の編集は自分で行うことが出来ます。（既に登録されたエントリーの編集・削除は<a href="#edit-form" class="change-edit-form">こちら</a>）</small></li>
@@ -189,7 +190,7 @@
                   </div>
                 </div>
                 <div class="form-group eve">
-                  <label class="col-sm-3 control-label">前夜祭に参加しますか？<br class="hidden-xs"><small>（詳細は<a href="http://darkstalkersduofes.blog.fc2.com/blog-entry-27.html" target="_blank">こちら</a>）</small></label>
+                  <label class="col-sm-3 control-label">前夜祭（<span class="highlight">初・中級者大会</span>）に<br class="hidden-xs">参加しますか？<br class="hidden-xs"><small><!-- （詳細は<a href="http://darkstalkersduofes.blog.fc2.com/blog-entry-27.html" target="_blank">こちら</a>） --></small></label>
                   <div class="col-sm-6">
                     <label class="radio-inline">
                       <input type="radio" name="member1-eve" id="member1-eve-ok" value="1">
@@ -244,7 +245,7 @@
                   </div>
                 </div>
                 <div class="form-group eve">
-                  <label class="col-sm-3 control-label">前夜祭に参加しますか？<br class="hidden-xs"><small>（詳細は<a href="http://darkstalkersduofes.blog.fc2.com/blog-entry-27.html" target="_blank">こちら</a>）</small></label>
+                  <label class="col-sm-3 control-label">前夜祭（<span class="highlight">初・中級者大会</span>）に<br class="hidden-xs">参加しますか？<br class="hidden-xs"><small><!-- （詳細は<a href="http://darkstalkersduofes.blog.fc2.com/blog-entry-27.html" target="_blank">こちら</a>） --></small></label>
                   <div class="col-sm-6">
                     <label class="radio-inline">
                       <input type="radio" name="member2-eve" id="member2-eve-ok" value="1">
@@ -303,28 +304,11 @@
       </div><!-- /.modal-dialog -->
     </section><!-- /.modal -->
 
-    <section class="modal fade" tabindex="-1" role="dialog" id="wanted">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">WANTED ( <span class="wanted-count">0</span> ) </h4>
-          </div>
-          <div class="modal-body">
-            <ul id="wanted-members" class="singles">
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </section><!-- /.modal -->
-
     <section class="modal fade" tabindex="-1" role="dialog" id="hunter">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">HUNTER ( <span class="hunter-count">0</span> ) </h4>
+            <h4 class="modal-title">前夜祭参加者リスト ( <span class="hunter-count">0</span> ) </h4>
           </div>
           <div class="modal-body">
             <ul id="hunter-members" class="singles">

@@ -797,21 +797,8 @@ $(function(){
           }
         }
       }
-      var wantedIds = ['qbee', 'sasquatch', 'zabel'];
-      var wantedArray = [];
-      for (var key in wantedIds) {
-        wantedArray.push(pCharasEve[wantedIds[key]]);
-        delete pCharasEve[wantedIds[key]];
-      }
-      displayCharaCount(sortByCount(wantedArray), '#eve-wanted-count', '.wanted-count');
-      var hunterArray = sortByCount(objectToArray(pCharasEve));
-      hunterArray.unshift({
-        id: 'donovan',
-        name: 'ドノヴァン',
-        image: 'img_h_donovan_50x50.jpg',
-        count: 0
-      });
-      displayCharaCount(hunterArray, '#eve-hunter-count', '.hunter-count');
+      var eveArray = sortByCount(objectToArray(pCharasEve));
+      displayCharaCount(eveArray, '#eve-hunter-count', '.hunter-count');
 
       // 都道府県別集計
       var regionCount = [];
@@ -925,37 +912,13 @@ $(function(){
     return str.slice(-len);
   }
 
-  $('#wanted').on('show.bs.modal', function (e) {
-    var list = [];
-    for (var key in entries) {
-      var entry = entries[key];
-      for (var i = 0, len = entry.members.length; i < len; i++) {
-        var member = entry.members[i];
-        if (member.eve == 1 &&
-          member.character.match(/(qbee|sasquatch|zabel)/) ) {
-          list.push({
-            members: [
-              member
-            ]
-          });
-        }
-      }
-    }
-    // render
-    $('#wanted-members').empty();
-    for (var i = 0, len = list.length; i < len; i++ ) {
-      $('#template-eve').tmpl(list[i]).prependTo('#wanted-members');
-    }
-  });
-
   $('#hunter').on('show.bs.modal', function (e) {
     var list = [];
     for (var key in entries) {
       var entry = entries[key];
       for (var i = 0, len = entry.members.length; i < len; i++) {
         var member = entry.members[i];
-        if (member.eve == 1 &&
-          !member.character.match(/(qbee|sasquatch|zabel)/) ) {
+        if (member.eve == 1) {
           list.push({
             members: [
               member

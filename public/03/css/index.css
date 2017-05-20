@@ -684,6 +684,11 @@ label {
   text-align: right;
 }
 
+/* add */
 .manage {
   float: right;
+}
+.highlight {
+  color: red;
+  font-weight: bold;
 }
