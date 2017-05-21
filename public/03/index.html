@@ -81,9 +81,9 @@
       <div class="col-sm-6">
         <dl class="dl-horizontal">
           <dt>打ち上げ参加人数</dt>
-          <dd class="after-count">0</dd>
+          <dd><a href="#after-dialog" data-toggle="modal" class="modal-link"><span class="after-count">0</span></a></dd>
           <dt>前夜祭参加人数</dt>
-          <dd class="eve-count">0</dd>
+          <dd><a href="#eve-dialog" data-toggle="modal" class="modal-link"><span class="eve-count">0</span></a></dd>
         </dl>
       </div>
       </div>
@@ -92,12 +92,12 @@
         <ul id="character-count" class="count">
         </ul>
       </section>
-      <section>
+<!--       <section>
         <h4>使用キャラ分布（前夜祭）<a href="#hunter" data-toggle="modal" class="modal-link"> ≫<span>プレイヤーリスト</span></a></h4>
         <section>
           <ul id="eve-hunter-count" class="count"></ul>
         </section>
-      </section>
+      </section> -->
       <section>
         <h4>棲息地域分布</h4>
         <ul id="region-count">
@@ -304,14 +304,31 @@
       </div><!-- /.modal-dialog -->
     </section><!-- /.modal -->
 
-    <section class="modal fade" tabindex="-1" role="dialog" id="hunter">
+    <section class="modal fade" tabindex="-1" role="dialog" id="eve-dialog">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">前夜祭参加者リスト ( <span class="hunter-count">0</span> ) </h4>
+            <h4 class="modal-title">前夜祭参加者リスト ( <span class="eve-count">0</span> ) </h4>
           </div>
           <div class="modal-body">
-            <ul id="hunter-members" class="singles">
+            <ul id="eve-members" class="singles">
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </section><!-- /.modal -->
+
+    <section class="modal fade" tabindex="-1" role="dialog" id="after-dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">打ち上げ参加者リスト ( <span class="after-count">0</span> ) </h4>
+          </div>
+          <div class="modal-body">
+            <ul id="after-members" class="singles">
             </ul>
           </div>
           <div class="modal-footer">

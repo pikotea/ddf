@@ -613,12 +613,12 @@ label {
   display: none;
 }
 
-.modal-link {
+/*.modal-link {
   margin-left: 6px;
 }
 .modal-link > span {
   font-size: 12px;
-}
+}*/
 @media (max-width: 768px) {
   #admin .from-group {
     text-align: center;

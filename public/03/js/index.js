@@ -789,16 +789,16 @@ $(function(){
 
       // 前夜祭
       var pCharasEve = $.extend(true, {}, charas);
-      for (var key in entries) {
-        var entry = entries[key];
-        for (var i = 0, len = entry.members.length; i < len; i++) {
-          if (entry.members[i].eve == 1) {
-            pCharasEve[entry.members[i].character].count++;
-          }
-        }
-      }
-      var eveArray = sortByCount(objectToArray(pCharasEve));
-      displayCharaCount(eveArray, '#eve-hunter-count', '.hunter-count');
+      // for (var key in entries) {
+      //   var entry = entries[key];
+      //   for (var i = 0, len = entry.members.length; i < len; i++) {
+      //     if (entry.members[i].eve == 1) {
+      //       pCharasEve[entry.members[i].character].count++;
+      //     }
+      //   }
+      // }
+      // var eveArray = sortByCount(objectToArray(pCharasEve));
+      // displayCharaCount(eveArray, '#eve-hunter-count', '.hunter-count');
 
       // 都道府県別集計
       var regionCount = [];
@@ -912,7 +912,7 @@ $(function(){
     return str.slice(-len);
   }
 
-  $('#hunter').on('show.bs.modal', function (e) {
+  $('#eve-dialog').on('show.bs.modal', function (e) {
     var list = [];
     for (var key in entries) {
       var entry = entries[key];
@@ -928,9 +928,31 @@ $(function(){
       }
     }
     // render
-    $('#hunter-members').empty();
+    $('#eve-members').empty();
     for (var i = 0, len = list.length; i < len; i++ ) {
-      $('#template-eve').tmpl(list[i]).prependTo('#hunter-members');
+      $('#template-eve').tmpl(list[i]).prependTo('#eve-members');
+    }
+  });
+
+  $('#after-dialog').on('show.bs.modal', function (e) {
+    var list = [];
+    for (var key in entries) {
+      var entry = entries[key];
+      for (var i = 0, len = entry.members.length; i < len; i++) {
+        var member = entry.members[i];
+        if (member.after == 1) {
+          list.push({
+            members: [
+              member
+            ]
+          });
+        }
+      }
+    }
+    // render
+    $('#after-members').empty();
+    for (var i = 0, len = list.length; i < len; i++ ) {
+      $('#template-eve').tmpl(list[i]).prependTo('#after-members');
     }
   });
 
